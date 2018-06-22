@@ -30,10 +30,10 @@ def spin(string, seed=None):
     # 1.9e62 possibilities for the random string and it uses uncommon Unicode
     # characters, that is more possibilerties than number of Planck times that
     # have passed in the universe so it is safe to do.
-    characters = [chr(x) for x in range(1234, 1368)]    
+    characters = [unichr(x) for x in range(1234, 1368)]
     global random_string
     random_string = ''.join(random.sample(characters, 30))
-    
+
     # If the user has chosen a seed for the random numbers use it
     if seed is not None:
         random.seed(seed)
